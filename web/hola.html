@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+
+	<title></title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+	<link href='http://fonts.googleapis.com/css?family=Raleway:400,800' rel='stylesheet' type='text/css'>
+	<script src="http://api.html5media.info/1.1.5/html5media.min.js"></script>
+	<script>
+
+
+	function playPause(btn,audio){
+	    var audio = document.getElementById(audio);
+	    if(audio.paused){
+	        audio.play();
+	        btn.innerHTML = "<span class='demoSpan1Pause'>";
+	    } else {
+	        audio.pause();
+	        btn.innerHTML =  "<span class='demoSpan1Play'>";
+	    }
+	}
+
+	</script>
+	<style type="">
+		body{
+			background-color: #314B62;
+		}
+		p{
+			font-family: 'Raleway';
+			color:white;
+			font-weight: bold;
+		}
+
+		.texto1{
+			font-size: 3em;
+			word-spacing: 0.2em;
+			vertical-align: baseline;			
+		}
+		.texto2{
+			font-size: 4.5em;
+			word-spacing: 0.1em;
+			vertical-align: baseline;
+		}
+		.boton
+		{
+			background: transparent;
+			border-radius: 5px;
+			border-width: 3px;
+   			border-color: #fff;
+   			border-style: solid;
+   			margin-top: -10px;
+   			margin-right: 10px;
+    		height: 50px;
+    		width: 40px;
+		}
+
+		.alinear{
+  			vertical-align: middle;  /* vertical alignment of the inline element */
+  		}
+  		.margen{
+  			margin-top: -40px;
+  		}
+		span
+  		 {height:40px; width:40px; display:block; position:relative;} 
+  		 .demoSpan1Play:before
+  		 {
+  		 	content:''; 
+  		 	height:30px; 
+  		 	width:10px; 
+  		 	display:block; 
+  		 	border:17px 
+  		 	transparent solid; 
+  		 	border-right-width:0; 
+  		 	border-left-color:#fff; 
+  		 	position:absolute; 
+  		 	top:3px; 
+  		 	left:4px;
+  		 }
+
+		.demoSpan1Pause:before, .demoSpan1Pause:after
+		{
+			content:'';
+			height:33px;
+			width:8px; 
+			display:block; 
+			background:#fff; 
+			position:absolute; 
+			top:3px; 
+			left: 1px; 
+			border-radius: 4px;
+
+		}
+		.demoSpan1Pause:after{left:15px;}
+	</style>
+</head>
+<body>
+
+	<audio id="demo" src="http://stream.giss.tv:8000/ecos.mp3" autoplay></audio>
+<div class="container ">
+	<div class="row ">
+		<div class="col-md-12">
+		  <p class="text-center texto1">SEÑAL EN </p>
+			<!--<button onclick="document.getElementById('demo').play()">Reproducir el Audio</button>
+			<button onclick="document.getElementById('demo').pause()">Pausar el Audio</button>
+		  	<button onclick="document.getElementById('demo').volume+=0.1">Aumentar el Volumen</button>
+		  	<button onclick="document.getElementById('demo').volume-=0.1">Disminuir el Volumen</button> -->
+		  	<p class="text-center margen texto2 hidden-xs"> 
+		  		<button class= "alinear boton " id="playpausebtn" onclick="playPause(this,'demo')"><span class="demoSpan1Pause"></button>VIVO
+		  	</p>
+		  	<p class="text-center margen texto2 visible-xs"> 
+		  		<button class= "alinear boton " id="playpausebtn" onclick="playPause(this,'demo')"><span class="demoSpan1Play"></button>VIVO
+		  	</p>
+		 </div>
+	</div>
+	</div>
+</div>
+</body>
+
+</html>

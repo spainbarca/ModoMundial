@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.EditConvocadosTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.EditConvocadosLabel_id}" for="id" />
+                    <h:inputText id="id" value="#{convocadosController.selected.id}" title="#{bundle.EditConvocadosTitle_id}" required="true" requiredMessage="#{bundle.EditConvocadosRequiredMessage_id}"/>
+                    <h:outputLabel value="#{bundle.EditConvocadosLabel_nombJug}" for="nombJug" />
+                    <h:inputText id="nombJug" value="#{convocadosController.selected.nombJug}" title="#{bundle.EditConvocadosTitle_nombJug}" />
+                    <h:outputLabel value="#{bundle.EditConvocadosLabel_apellJug}" for="apellJug" />
+                    <h:inputText id="apellJug" value="#{convocadosController.selected.apellJug}" title="#{bundle.EditConvocadosTitle_apellJug}" />
+                    <h:outputLabel value="#{bundle.EditConvocadosLabel_apodo}" for="apodo" />
+                    <h:inputText id="apodo" value="#{convocadosController.selected.apodo}" title="#{bundle.EditConvocadosTitle_apodo}" />
+                    <h:outputLabel value="#{bundle.EditConvocadosLabel_edad}" for="edad" />
+                    <h:inputText id="edad" value="#{convocadosController.selected.edad}" title="#{bundle.EditConvocadosTitle_edad}" />
+                    <h:outputLabel value="#{bundle.EditConvocadosLabel_talla}" for="talla" />
+                    <h:inputText id="talla" value="#{convocadosController.selected.talla}" title="#{bundle.EditConvocadosTitle_talla}" />
+                    <h:outputLabel value="#{bundle.EditConvocadosLabel_peso}" for="peso" />
+                    <h:inputText id="peso" value="#{convocadosController.selected.peso}" title="#{bundle.EditConvocadosTitle_peso}" required="true" requiredMessage="#{bundle.EditConvocadosRequiredMessage_peso}"/>
+                    <h:outputLabel value="#{bundle.EditConvocadosLabel_partSel}" for="partSel" />
+                    <h:inputText id="partSel" value="#{convocadosController.selected.partSel}" title="#{bundle.EditConvocadosTitle_partSel}" />
+                    <h:outputLabel value="#{bundle.EditConvocadosLabel_golesSel}" for="golesSel" />
+                    <h:inputText id="golesSel" value="#{convocadosController.selected.golesSel}" title="#{bundle.EditConvocadosTitle_golesSel}" />
+                    <h:outputLabel value="#{bundle.EditConvocadosLabel_confederacion}" for="confederacion" />
+                    <h:selectOneMenu id="confederacion" value="#{convocadosController.selected.confederacion}" title="#{bundle.EditConvocadosTitle_confederacion}" >
+                        <f:selectItems value="#{confederacionesController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.EditConvocadosLabel_liga}" for="liga" />
+                    <h:selectOneMenu id="liga" value="#{convocadosController.selected.liga}" title="#{bundle.EditConvocadosTitle_liga}" >
+                        <f:selectItems value="#{ligasController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.EditConvocadosLabel_mundJug}" for="mundJug" />
+                    <h:selectOneMenu id="mundJug" value="#{convocadosController.selected.mundJug}" title="#{bundle.EditConvocadosTitle_mundJug}" >
+                        <f:selectItems value="#{numeroController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.EditConvocadosLabel_posicion}" for="posicion" />
+                    <h:selectOneMenu id="posicion" value="#{convocadosController.selected.posicion}" title="#{bundle.EditConvocadosTitle_posicion}" >
+                        <f:selectItems value="#{posicionesController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.EditConvocadosLabel_pais}" for="pais" />
+                    <h:selectOneMenu id="pais" value="#{convocadosController.selected.pais}" title="#{bundle.EditConvocadosTitle_pais}" >
+                        <f:selectItems value="#{paisesController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.EditConvocadosLabel_club}" for="club" />
+                    <h:selectOneMenu id="club" value="#{convocadosController.selected.club}" title="#{bundle.EditConvocadosTitle_club}" >
+                        <f:selectItems value="#{clubController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <h:commandLink action="#{convocadosController.update}" value="#{bundle.EditConvocadosSaveLink}"/>
+                <br />
+                <br />
+                <h:link outcome="View" value="#{bundle.EditConvocadosViewLink}"/>
+                <br />
+                <h:commandLink action="#{convocadosController.prepareList}" value="#{bundle.EditConvocadosShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.EditConvocadosIndexLink}" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

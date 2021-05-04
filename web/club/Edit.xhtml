@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.EditClubTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.EditClubLabel_codClub}" for="codClub" />
+                    <h:inputText id="codClub" value="#{clubController.selected.codClub}" title="#{bundle.EditClubTitle_codClub}" required="true" requiredMessage="#{bundle.EditClubRequiredMessage_codClub}"/>
+                    <h:outputLabel value="#{bundle.EditClubLabel_nomClub}" for="nomClub" />
+                    <h:inputText id="nomClub" value="#{clubController.selected.nomClub}" title="#{bundle.EditClubTitle_nomClub}" required="true" requiredMessage="#{bundle.EditClubRequiredMessage_nomClub}"/>
+                    <h:outputLabel value="#{bundle.EditClubLabel_codLiga}" for="codLiga" />
+                    <h:selectOneMenu id="codLiga" value="#{clubController.selected.codLiga}" title="#{bundle.EditClubTitle_codLiga}" required="true" requiredMessage="#{bundle.EditClubRequiredMessage_codLiga}">
+                        <f:selectItems value="#{ligasController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <h:commandLink action="#{clubController.update}" value="#{bundle.EditClubSaveLink}"/>
+                <br />
+                <br />
+                <h:link outcome="View" value="#{bundle.EditClubViewLink}"/>
+                <br />
+                <h:commandLink action="#{clubController.prepareList}" value="#{bundle.EditClubShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.EditClubIndexLink}" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

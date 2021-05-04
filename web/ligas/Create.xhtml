@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateLigasTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreateLigasLabel_codLiga}" for="codLiga" />
+                    <h:inputText id="codLiga" value="#{ligasController.selected.codLiga}" title="#{bundle.CreateLigasTitle_codLiga}" required="true" requiredMessage="#{bundle.CreateLigasRequiredMessage_codLiga}"/>
+                    <h:outputLabel value="#{bundle.CreateLigasLabel_nomLiga}" for="nomLiga" />
+                    <h:inputText id="nomLiga" value="#{ligasController.selected.nomLiga}" title="#{bundle.CreateLigasTitle_nomLiga}" required="true" requiredMessage="#{bundle.CreateLigasRequiredMessage_nomLiga}"/>
+                    <h:outputLabel value="#{bundle.CreateLigasLabel_pais}" for="pais" />
+                    <h:inputText id="pais" value="#{ligasController.selected.pais}" title="#{bundle.CreateLigasTitle_pais}" required="true" requiredMessage="#{bundle.CreateLigasRequiredMessage_pais}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{ligasController.create}" value="#{bundle.CreateLigasSaveLink}" />
+                <br />
+                <br />
+                <h:commandLink action="#{ligasController.prepareList}" value="#{bundle.CreateLigasShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.CreateLigasIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

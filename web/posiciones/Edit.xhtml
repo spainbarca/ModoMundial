@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.EditPosicionesTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.EditPosicionesLabel_n}" for="n" />
+                    <h:inputText id="n" value="#{posicionesController.selected.n}" title="#{bundle.EditPosicionesTitle_n}" required="true" requiredMessage="#{bundle.EditPosicionesRequiredMessage_n}"/>
+                    <h:outputLabel value="#{bundle.EditPosicionesLabel_codPos}" for="codPos" />
+                    <h:inputText id="codPos" value="#{posicionesController.selected.codPos}" title="#{bundle.EditPosicionesTitle_codPos}" required="true" requiredMessage="#{bundle.EditPosicionesRequiredMessage_codPos}"/>
+                    <h:outputLabel value="#{bundle.EditPosicionesLabel_nomPos}" for="nomPos" />
+                    <h:inputText id="nomPos" value="#{posicionesController.selected.nomPos}" title="#{bundle.EditPosicionesTitle_nomPos}" required="true" requiredMessage="#{bundle.EditPosicionesRequiredMessage_nomPos}"/>
+                </h:panelGrid>
+                <h:commandLink action="#{posicionesController.update}" value="#{bundle.EditPosicionesSaveLink}"/>
+                <br />
+                <br />
+                <h:link outcome="View" value="#{bundle.EditPosicionesViewLink}"/>
+                <br />
+                <h:commandLink action="#{posicionesController.prepareList}" value="#{bundle.EditPosicionesShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.EditPosicionesIndexLink}" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

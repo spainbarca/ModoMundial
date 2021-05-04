@@ -1,0 +1,96 @@
+@import url(http://weloveiconfonts.com/api/?family=fontawesome);
+
+[class*="fontawesome-"]:before {
+  font-family: 'FontAwesome', sans-serif;
+}
+
+
+* { padding: 0; margin: 0; outline: 0; }
+
+body {
+    font-size: 12px;
+    font-family: Arial, sans-serif;
+    color: #fff;
+    background: #171717;
+    height: 100%;
+    text-align: left;
+}
+
+.cl { font-size: 0; line-height: 0; height: 0; clear: both; }
+
+a img { border: 8; }
+a { color: #9fea00; text-decoration: none; }
+a:hover { text-decoration: underline; cursor: pointer;}
+
+.left { float: left; display: inline; }
+.right { float: right; display: inline;} 
+.notext {font-size: 0; line-height: 0; text-indent: -4000px;}
+
+.center {display: block; margin: 0 auto;}
+
+.shell {margin: 0 auto; width: 930px;}
+
+#header {background: #000;}
+#header .shell {width: 100%; background: url(../imagenes/es.jpg) ; height: 230px;}
+
+h1#logo {padding-left: 415px; float: left; padding-top: 141px;}
+/*h1#logo a {display: block; background: url(imagenes/logo.gif) no-repeat 0 0; width: 299px; height: 39px;}*/
+#fondoazul .shell{
+    width:100%;
+    height: 100%; 
+    background: url(../imagenes/fondoazul.jpg) no-repeat; 
+    -webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover; 
+}
+
+.borde{;
+    width: 1288px; 
+    height:870px;
+    background: url(../bo.png) no-repeat ;
+}
+
+.separador{
+    width: 100%; 
+    background: url(../side.png);
+}
+
+
+/*Boton */
+
+#toggle { display: none; }
+#boton {
+    display: block;
+    margin: auto;
+    width: 100px;
+    height: 100px;
+    background: #fff;
+    border-radius: 50%;
+
+    text-align: center;
+    line-height: 200px;
+    font-size: 70px;
+    color: #777;
+    
+    box-shadow: 0 12px 30px rgba(0,0,0,0.7);
+    cursor: pointer;
+}
+
+#toggle:checked + #boton {
+    background: #eee;
+    box-shadow: inset 0 12px 35px rgba(0,0,0,0.5);
+    color: rgba(0,255,0,0.8);
+}
+
+/*Luces*/
+.contenedor { width: 100%; }
+.luces {
+    display: flex;
+    margin-top: 50px;
+    border-top: 1px solid #fff;
+    justify-content: center;
+}
+.luces img { display: block; margin: auto; }
+.luz { opacity: 0; transition: all 0.5s; }
+#toggle:checked ~ .luces .luz { opacity: 1; }

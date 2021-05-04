@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ViewPosicionesTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{bundle.ViewPosicionesLabel_n}"/>
+                    <h:outputText value="#{posicionesController.selected.n}" title="#{bundle.ViewPosicionesTitle_n}"/>
+                    <h:outputText value="#{bundle.ViewPosicionesLabel_codPos}"/>
+                    <h:outputText value="#{posicionesController.selected.codPos}" title="#{bundle.ViewPosicionesTitle_codPos}"/>
+                    <h:outputText value="#{bundle.ViewPosicionesLabel_nomPos}"/>
+                    <h:outputText value="#{posicionesController.selected.nomPos}" title="#{bundle.ViewPosicionesTitle_nomPos}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{posicionesController.destroyAndView}" value="#{bundle.ViewPosicionesDestroyLink}"/>
+                <br />
+                <br />
+                <h:link outcome="Edit" value="#{bundle.ViewPosicionesEditLink}"/>
+                <br />
+                <h:commandLink action="#{posicionesController.prepareCreate}" value="#{bundle.ViewPosicionesCreateLink}" />
+                <br />
+                <h:commandLink action="#{posicionesController.prepareList}" value="#{bundle.ViewPosicionesShowAllLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ViewPosicionesIndexLink}"/>
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

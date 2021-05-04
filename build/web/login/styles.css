@@ -1,0 +1,65 @@
+body {
+    font-size: 12px;
+    font-family: Arial, sans-serif;
+    height: 100%;
+    text-align: left;
+    background: url(../imagenes/fondoopcionn.jpg) no-repeat center center fixed; 
+    background-size: cover; 
+    -webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+}
+
+#header {background: #000;}
+#header .shell {width: 100%; background: url(../imagenes/es.jpg) ; height: 230px;}
+
+.left { float: left; display: inline; }
+.right { float: right; display: inline;} 
+.notext {font-size: 0; line-height: 0; text-indent: -4000px;}
+
+.center {display: block; margin: 0 auto;}
+
+.button{
+	background: #7f8c8d;
+	color: #fff;
+	display: inline-block;
+	font-size: 1.25em;
+	margin: 100px;
+	padding: 20px 0px;
+	text-align: center;
+	width: 200px;
+	text-decoration: none;
+	box-shadow: 10px 10px 0px #373c3c;
+}
+
+.button span {
+margin-right:20px;
+}
+ 
+/*Colores*/
+.button.blue {
+background:#3498db;
+box-shadow:10px 10px 0px #266792;
+}
+ 
+.button.yellow {
+background:#e67e22;
+box-shadow:10px 10px 0px #b55704;
+}
+
+buttonwhite {
+background:#fff;
+box-shadow:10px 10px 0px #b55704;
+}
+
+
+ 
+.button.radius {
+border-radius:50px;
+}
+
+/*Efectos, Hover*/
+.button:hover {
+box-shadow:0px 0px 0px;
+padding-top:7px;
+}

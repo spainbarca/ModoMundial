@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ViewConvocadosTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{bundle.ViewConvocadosLabel_id}"/>
+                    <h:outputText value="#{convocadosController.selected.id}" title="#{bundle.ViewConvocadosTitle_id}"/>
+                    <h:outputText value="#{bundle.ViewConvocadosLabel_nombJug}"/>
+                    <h:outputText value="#{convocadosController.selected.nombJug}" title="#{bundle.ViewConvocadosTitle_nombJug}"/>
+                    <h:outputText value="#{bundle.ViewConvocadosLabel_apellJug}"/>
+                    <h:outputText value="#{convocadosController.selected.apellJug}" title="#{bundle.ViewConvocadosTitle_apellJug}"/>
+                    <h:outputText value="#{bundle.ViewConvocadosLabel_apodo}"/>
+                    <h:outputText value="#{convocadosController.selected.apodo}" title="#{bundle.ViewConvocadosTitle_apodo}"/>
+                    <h:outputText value="#{bundle.ViewConvocadosLabel_edad}"/>
+                    <h:outputText value="#{convocadosController.selected.edad}" title="#{bundle.ViewConvocadosTitle_edad}"/>
+                    <h:outputText value="#{bundle.ViewConvocadosLabel_talla}"/>
+                    <h:outputText value="#{convocadosController.selected.talla}" title="#{bundle.ViewConvocadosTitle_talla}"/>
+                    <h:outputText value="#{bundle.ViewConvocadosLabel_peso}"/>
+                    <h:outputText value="#{convocadosController.selected.peso}" title="#{bundle.ViewConvocadosTitle_peso}"/>
+                    <h:outputText value="#{bundle.ViewConvocadosLabel_partSel}"/>
+                    <h:outputText value="#{convocadosController.selected.partSel}" title="#{bundle.ViewConvocadosTitle_partSel}"/>
+                    <h:outputText value="#{bundle.ViewConvocadosLabel_golesSel}"/>
+                    <h:outputText value="#{convocadosController.selected.golesSel}" title="#{bundle.ViewConvocadosTitle_golesSel}"/>
+                    <h:outputText value="#{bundle.ViewConvocadosLabel_confederacion}"/>
+                    <h:outputText value="#{convocadosController.selected.confederacion}" title="#{bundle.ViewConvocadosTitle_confederacion}"/>
+                    <h:outputText value="#{bundle.ViewConvocadosLabel_liga}"/>
+                    <h:outputText value="#{convocadosController.selected.liga}" title="#{bundle.ViewConvocadosTitle_liga}"/>
+                    <h:outputText value="#{bundle.ViewConvocadosLabel_mundJug}"/>
+                    <h:outputText value="#{convocadosController.selected.mundJug}" title="#{bundle.ViewConvocadosTitle_mundJug}"/>
+                    <h:outputText value="#{bundle.ViewConvocadosLabel_posicion}"/>
+                    <h:outputText value="#{convocadosController.selected.posicion}" title="#{bundle.ViewConvocadosTitle_posicion}"/>
+                    <h:outputText value="#{bundle.ViewConvocadosLabel_pais}"/>
+                    <h:outputText value="#{convocadosController.selected.pais}" title="#{bundle.ViewConvocadosTitle_pais}"/>
+                    <h:outputText value="#{bundle.ViewConvocadosLabel_club}"/>
+                    <h:outputText value="#{convocadosController.selected.club}" title="#{bundle.ViewConvocadosTitle_club}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{convocadosController.destroyAndView}" value="#{bundle.ViewConvocadosDestroyLink}"/>
+                <br />
+                <br />
+                <h:link outcome="Edit" value="#{bundle.ViewConvocadosEditLink}"/>
+                <br />
+                <h:commandLink action="#{convocadosController.prepareCreate}" value="#{bundle.ViewConvocadosCreateLink}" />
+                <br />
+                <h:commandLink action="#{convocadosController.prepareList}" value="#{bundle.ViewConvocadosShowAllLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ViewConvocadosIndexLink}"/>
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>
